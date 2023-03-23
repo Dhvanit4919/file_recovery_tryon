@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         "/feedback": (context) => feedback(),
-        // "/MyHomePage": ((context) => MyHomePage()),
+        "/MyHomePage": ((context) => MyHomePage()),
         // '/rate_us': ((context) => rate_us()),
         '/terms': ((context) => terms()),
         '/privacy': ((context) => privacy()),
@@ -54,131 +54,131 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: file_recovery(),
+      home: MyHomePage(),
     );
   }
 }
 
-// class MyHomePage extends StatefulWidget {
-//   MyHomePage({Key? key}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key}) : super(key: key);
 
-//   @override
-//   State<MyHomePage> createState() => _MyHomePageState();
-// }
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
 
-// class _MyHomePageState extends State<MyHomePage> {
-//   int? _selectindexcolor;
-//   // late Box<String> Language;
-//   @override
-//   void initState() {
-//     // ignore: todo
-//     // TODO: implement initState
-//     super.initState();
-//     // Language = Hive.box<String>("language");
-//   }
+class _MyHomePageState extends State<MyHomePage> {
+  int? _selectindexcolor;
+  // late Box<String> Language;
+  @override
+  void initState() {
+    // ignore: todo
+    // TODO: implement initState
+    super.initState();
+    // Language = Hive.box<String>("language");
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         backgroundColor: Colors.black,
-//         appBar: AppBar(
-//           leading: IconButton(
-//             icon: Icon(Icons.arrow_back_ios),
-//             onPressed: () {
-//               showExitPopup(context);
-//               // print(showExitPopup(context));
-//             },
-//           ),
-//           backgroundColor: Colors.black,
-//           title: Text(
-//             "Select language",
-//             style: TextStyle(fontWeight: FontWeight.w500, fontSize: 23),
-//           ),
-//           actions: [
-//             IconButton(
-//               onPressed: () {
-//                 Navigator.push(context,
-//                     MaterialPageRoute(builder: (context) => file_recovery()));
-//               },
-//               icon: Icon(Icons.check),
-//               iconSize: 28,
-//             ),
-//           ],
-//         ),
-//         body: ListView.builder(
-//             itemCount: language.length,
-//             itemBuilder: (context, index) {
-//               return Padding(
-//                 padding: const EdgeInsets.all(8.0),
-//                 child: InkWell(
-//                   onTap: () {
-//                     setState(() {
-//                       _selectindexcolor = index;
-//                     });
-//                   },
-//                   child: Container(
-//                     decoration: BoxDecoration(
-//                         borderRadius: BorderRadius.circular(20),
-//                         color: _selectindexcolor == index
-//                             ? Color.fromARGB(255, 210, 28, 28)
-//                             : Color.fromARGB(255, 42, 41, 41)),
-//                     child: Padding(
-//                       padding: const EdgeInsets.all(4.0),
-//                       child: ListTile(
-//                         title: Row(children: [
-//                           CircleAvatar(
-//                             radius: 22,
-//                             backgroundImage: AssetImage(image[index]),
-//                             // backgroundColor: Colors.transparent,
-//                           ),
-//                           SizedBox(
-//                             width: 20,
-//                           ),
-//                           Text(
-//                             language[index],
-//                             style: TextStyle(
-//                                 color: Colors.white,
-//                                 fontWeight: FontWeight.bold,
-//                                 fontSize: 18),
-//                           )
-//                         ]),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               );
-//             }));
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              showExitPopup(context);
+              // print(showExitPopup(context));
+            },
+          ),
+          backgroundColor: Colors.black,
+          title: Text(
+            "Select language",
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 23),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => file_recovery()));
+              },
+              icon: Icon(Icons.check),
+              iconSize: 28,
+            ),
+          ],
+        ),
+        body: ListView.builder(
+            itemCount: language.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      _selectindexcolor = index;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: _selectindexcolor == index
+                            ? Color.fromARGB(255, 210, 28, 28)
+                            : Color.fromARGB(255, 42, 41, 41)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: ListTile(
+                        title: Row(children: [
+                          CircleAvatar(
+                            radius: 22,
+                            backgroundImage: AssetImage(image[index]),
+                            // backgroundColor: Colors.transparent,
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            language[index],
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          )
+                        ]),
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            }));
+  }
+}
 
-// List language = [
-//   "System",
-//   "English",
-//   "عربي",
-//   "português",
-//   "Indonesia",
-//   "Español",
-//   "Türkçe ",
-//   "বাংলা",
-//   "فارسی",
-//   "русский",
-//   "پاکستانی",
-//   "Melayu",
-//   "Tiếng việt"
-// ];
+List language = [
+  "System",
+  "English",
+  "عربي",
+  "português",
+  "Indonesia",
+  "Español",
+  "Türkçe ",
+  "বাংলা",
+  "فارسی",
+  "русский",
+  "پاکستانی",
+  "Melayu",
+  "Tiếng việt"
+];
 
-// List image = [
-//   "assets/system.jpg",
-//   "assets/english.webp",
-//   "assets/egypt.webp",
-//   "assets/barzil.webp",
-//   "assets/indonesia.png",
-//   "assets/red_yellow.png",
-//   "assets/turky.webp",
-//   "assets/bangla.webp",
-//   "assets/iran.webp",
-//   "assets/russia.webp",
-//   "assets/pakistan.webp",
-//   "assets/malesiya.webp",
-//   "assets/viet.webp"
-// ];
+List image = [
+  "assets/system.jpg",
+  "assets/english.webp",
+  "assets/egypt.webp",
+  "assets/barzil.webp",
+  "assets/indonesia.png",
+  "assets/red_yellow.png",
+  "assets/turky.webp",
+  "assets/bangla.webp",
+  "assets/iran.webp",
+  "assets/russia.webp",
+  "assets/pakistan.webp",
+  "assets/malesiya.webp",
+  "assets/viet.webp"
+];
